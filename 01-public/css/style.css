@@ -32,3 +32,17 @@ width: 400px; height: 700px;}
 width: 370px;
 height: 400px;
 margin-left: 12px;}
+
+.cartDetails {border: solid 2px #000;
+width: 800px;
+height: 800px;}
+
+.cartItem {border: solid 2px #000;
+width: 100%;
+height: 150px;}
+
+.itemPrice {
+    margin-top: auto;
+    margin-left: auto;
+    width: 200px;
+}
