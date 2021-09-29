@@ -8,11 +8,17 @@ use mra_vita;
 create table users(id int not null auto_increment,
 username varchar(255) not null,
 email varchar(255) not null,
+createdAt DATE,
+updatedAt DATE,
 primary key(id)
-
 );
 
-
+insert into users(username, email)
+values('anson', 'anson@gmail.com'),
+      ('george', 'george@gmail.com'),
+      ('happy', 'happy@gmail.com'),
+      ('deborah', 'deborah@gmail.com'),
+      ('lourdes', 'lourdes@gmail.com');
 
 create table vitamins(id int,
 label varchar(255) not null,
@@ -42,17 +48,6 @@ VALUES (1000,'MRA Vitamin D', 'USA', '220', "$9.74" ),
        (1013,'MRA Iron', 'USA', '100', '$15.00'),
        (1014,'MRA Vitamin K', 'USA', '100', '$9.50'),
        (1015,'MRA Folic Acid', 'USA', '220', '$9.50');
-
-
-    
-insert into users(username, email)
-values('anson', 'anson@gmail.com'),
-      ('george', 'george@gmail.com'),
-      ('happy', 'happy@gmail.com'),
-      ('deborah', 'deborah@gmail.com'),
-      ('lourdes', 'lourdes@gmail.com');
-
-
 
 
 select * from vitamins;

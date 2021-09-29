@@ -1,35 +1,20 @@
-//Dependencies
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const exphbs = require('express-handlebars');
-//const validator = require('validator');
-const routes = require('./controllers');
+const express = require("express");
+const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
+const path = require("path");
+const db = require('./config/connection');
 const helpers = require('./utils/helpers');
 
-//const sequelize = require('./config/connection');
-//const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//set up express
+//Test DB
+db.authenticate()
+    .then(() => console.log('Database connected...'))
+    .catch(err => console.log('ERROR' + err))
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize
-//   })
-// };
 
-//app.use(session(sess));
-
-// Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -37,8 +22,46 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+app.get('/', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('main', { layout: 'index' });
+});
 
-//sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => console.log('Now listening'));
-//});
+app.get('/details', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('details', { layout: 'index' });
+});
+
+app.get('/signup', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('signup', { layout: 'index' });
+});
+
+app.get('/login', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('login', { layout: 'index' });
+});
+
+app.get('/profile', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('profile', { layout: 'index' });
+});
+
+app.get('/cart', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('cart', { layout: 'index' });
+});
+
+app.get('/product', (req, res) => {
+    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+    res.render('product', { layout: 'index' });
+});
+
+
+app.use('/mra', require('./routes/index'));
+
+
+
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, console.log(`Server started on ${PORT}`));
