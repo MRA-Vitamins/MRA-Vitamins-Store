@@ -1,16 +1,32 @@
 const express = require("express");
+const session = require('express-session');
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const path = require("path");
 const db = require('./config/connection');
 const helpers = require('./utils/helpers');
+const routes = require('./controllers');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const app = express();
+//set up session
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db
+    })
+  };
+  
+  app.use(session(sess));
 
 //Test DB
 db.authenticate()
     .then(() => console.log('Database connected...'))
     .catch(err => console.log('ERROR' + err))
-const app = express();
+
 
 const hbs = exphbs.create({ helpers });
 
@@ -58,10 +74,10 @@ app.get('/product', (req, res) => {
 });
 
 
-app.use('/mra', require('./routes/index'));
-
-
+app.use(routes);
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, console.log(`Server started on ${PORT}`));
+db.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
