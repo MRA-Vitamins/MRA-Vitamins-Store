@@ -11,6 +11,10 @@
 //     .catch(err => console.log(err))
 // );
 
+const router = require('express').Router();
+const userRoutes = require('./loginRoutes');
+
+router.use('/', userRoutes);
 
 
-// module.exports = router;
+module.exports = router;
