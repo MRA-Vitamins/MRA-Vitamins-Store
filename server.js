@@ -40,38 +40,38 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('main', { layout: 'index' });
+    res.render('main');
 });
 
 app.get('/details', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('details', { layout: 'index' });
+    res.render('details');
 });
 
 app.get('/signup', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('signup', { layout: 'index' });
+    res.render('signup');
 });
 
 app.get('/login', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('login', { layout: 'index' });
+    res.render('login');
 });
 
 app.get('/profile', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('profile', { layout: 'index' });
+    res.render('profile');
 });
 
 app.get('/cart', (req, res) => {
     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('cart', { layout: 'index' });
+    res.render('cart');
 });
 
-app.get('/product', (req, res) => {
-    //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-    res.render('product', { layout: 'index' });
-});
+// app.get('/product', (req, res) => {
+//     //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
+//     res.render('product', { layout: 'index' });
+// });
 
 
 app.use(routes);
