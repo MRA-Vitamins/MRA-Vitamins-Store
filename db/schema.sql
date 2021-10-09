@@ -32,21 +32,21 @@ create database mra_vita;
 
 -- insert into vitamins(id, label, origin, quantity, price)
 -- VALUES (1000,'MRA Vitamin D', 'USA', '220', "$9.74" ),
---        (1001,'MRA Vitamin C', 'USA', '250', "$10.00"),
---        (1002,'MRA Vitamin E', 'USA', '250', "$9.50"),
---        (1003,'MRA Black Seed Oil', 'USA', '8 OZ', "25.00"),
---        (1004,'MRA Tumeric', 'USA', '90', '$15.00'),
---        (1005,'MRA Elder Berry Extract', 'USA', '8 OZ', '$10.00'),
---        (1006,'MRA Noni Berry', 'USA', '250', '$15.00'),
---        (1007,'MRA Calcium', 'USA', '100', '$15.00'),
---        (1008,'MRA Garlic Pills', 'USA', '90', '$10.00'),
---        (1009,'MRA Apple Cider Vin', 'USA', '100', '9.74'),
---        (1010,'MRA Multi-Vit His', 'USA', '100', '$9.50'),
---        (1011,'MRA Multi-Vit Hers', 'USA', '100', '$15.00'),
---        (1012,'MRA Echanasea', 'USA', '100', '$5.00'),
---        (1013,'MRA Iron', 'USA', '100', '$15.00'),
---        (1014,'MRA Vitamin K', 'USA', '100', '$9.50'),
---        (1015,'MRA Folic Acid', 'USA', '220', '$9.50');
+--        (1001,'MRA Vitamin C', 'BANGLADESH', '250', "$10.00"),
+--        (1002,'MRA Vitamin E', 'INDIA', '250', "$9.50"),
+--        (1003,'MRA Black Seed Oil', 'CHINA', '8 OZ', "25.00"),
+--        (1004,'MRA Tumeric', 'GUAM', '90', '$15.00'),
+--        (1005,'MRA Elder Berry Extract', 'CANADA', '8 OZ', '$10.00'),
+--        (1006,'MRA Noni Berry', 'UK', '250', '$15.00'),
+--        (1007,'MRA Calcium', 'TURKEY', '100', '$15.00'),
+--        (1008,'MRA Garlic Pills', 'CHAD', '90', '$10.00'),
+--        (1009,'MRA Apple Cider Vin', 'NIGERIA', '100', '9.74'),
+--        (1010,'MRA Multi-Vit His', 'RUSSIA', '100', '$9.50'),
+--        (1011,'MRA Multi-Vit Hers', 'JAPAN', '100', '$15.00'),
+--        (1012,'MRA Echanasea', 'SOUTH KOREA', '100', '$5.00'),
+--        (1013,'MRA Iron', 'NORTH KOREA', '100', '$15.00'),
+--        (1014,'MRA Vitamin K', 'BRAZIL', '100', '$9.50'),
+--        (1015,'MRA Folic Acid', 'COSTA RICA', '220', '$9.50');
 
 
 -- select * from vitamins;
